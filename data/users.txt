@@ -1,0 +1,93 @@
+[
+  {
+    "user_id": 1,
+    "full_name": "Alice Johnson",
+    "email": "johnson.a@university.edu",
+    "affiliation": "Student",
+    "alert_subscriptions": [
+      { "zone_id": 1, "zone_name": "Main Campus", "min_severity": 3 },
+      { "zone_id": 3, "zone_name": "South Campus", "min_severity": 2 }
+    ]
+  },
+  {
+    "user_id": 2,
+    "full_name": "Bob Martinez",
+    "email": "martinez.b@university.edu",
+    "affiliation": "Staff",
+    "alert_subscriptions": [
+      { "zone_id": 1, "zone_name": "Main Campus", "min_severity": 1 }
+    ]
+  },
+  {
+    "user_id": 3,
+    "full_name": "Carol Chen",
+    "email": "chen.c@university.edu",
+    "affiliation": "Student",
+    "alert_subscriptions": [
+      { "zone_id": 2, "zone_name": "North Residential", "min_severity": 4 },
+      { "zone_id": 4, "zone_name": "Athletic District", "min_severity": 3 }
+    ]
+  },
+  {
+    "user_id": 4,
+    "full_name": "David Park",
+    "email": "park.d@university.edu",
+    "affiliation": "Visitor",
+    "alert_subscriptions": []
+  },
+  {
+    "user_id": 5,
+    "full_name": "Elena Rodriguez",
+    "email": "rodriguez.e@university.edu",
+    "affiliation": "Student",
+    "alert_subscriptions": [
+      { "zone_id": 1, "zone_name": "Main Campus", "min_severity": 2 },
+      { "zone_id": 2, "zone_name": "North Residential", "min_severity": 2 },
+      { "zone_id": 5, "zone_name": "West Arts Quarter", "min_severity": 1 }
+    ]
+  },
+  {
+    "user_id": 6,
+    "full_name": "Frank Williams",
+    "email": "williams.f@university.edu",
+    "affiliation": "Staff",
+    "alert_subscriptions": [
+      { "zone_id": 3, "zone_name": "South Campus", "min_severity": 1 }
+    ]
+  },
+  {
+    "user_id": 7,
+    "full_name": "Grace Kim",
+    "email": "kim.g@university.edu",
+    "affiliation": "Student",
+    "alert_subscriptions": [
+      { "zone_id": 5, "zone_name": "West Arts Quarter", "min_severity": 3 }
+    ]
+  },
+  {
+    "user_id": 8,
+    "full_name": "Henry Nguyen",
+    "email": "nguyen.h@university.edu",
+    "affiliation": "Student",
+    "alert_subscriptions": []
+  },
+  {
+    "user_id": 9,
+    "full_name": "Isabella Brown",
+    "email": "brown.i@university.edu",
+    "affiliation": "Staff",
+    "alert_subscriptions": [
+      { "zone_id": 1, "zone_name": "Main Campus", "min_severity": 2 },
+      { "zone_id": 4, "zone_name": "Athletic District", "min_severity": 2 }
+    ]
+  },
+  {
+    "user_id": 10,
+    "full_name": "James Wilson",
+    "email": "wilson.j@university.edu",
+    "affiliation": "Visitor",
+    "alert_subscriptions": [
+      { "zone_id": 1, "zone_name": "Main Campus", "min_severity": 5 }
+    ]
+  }
+]

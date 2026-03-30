@@ -1,0 +1,201 @@
+{
+  "_comment": "SafeRoute MongoDB Collection Definitions",
+  "_description": "This document defines the three main collections for the SafeRoute campus safety routing database. The design follows the MongoDB embedded data model pattern, aggregating related data into hierarchical documents to minimize joins (lookups) and optimize read performance for common access patterns.",
+
+  "collections": {
+
+    "users": {
+      "_comment": "The Users collection stores user profiles along with their embedded alert subscriptions. Each user has a unique email and an affiliation type. Alert subscriptions are embedded because they are always accessed in the context of a specific user and have a 1-to-many relationship.",
+
+      "example_1": {
+        "_id": "ObjectId('665a1b2c3d4e5f6a7b8c9d01')",
+        "user_id": 1,
+        "full_name": "Alice Johnson",
+        "email": "johnson.a@university.edu",
+        "affiliation": "Student",
+        "alert_subscriptions": [
+          {
+            "_comment": "Each subscription links the user to a zone and specifies the minimum severity level (1-5) for alerts they want to receive.",
+            "zone_id": 1,
+            "zone_name": "Main Campus",
+            "min_severity": 3
+          },
+          {
+            "zone_id": 3,
+            "zone_name": "South Campus",
+            "min_severity": 2
+          }
+        ]
+      },
+
+      "example_2": {
+        "_id": "ObjectId('665a1b2c3d4e5f6a7b8c9d02')",
+        "user_id": 2,
+        "full_name": "Bob Martinez",
+        "email": "martinez.b@university.edu",
+        "affiliation": "Staff",
+        "alert_subscriptions": []
+      }
+    },
+
+    "zones": {
+      "_comment": "The Zones collection is the primary geospatial collection. Each zone contains embedded street segments, and each street segment contains its own embedded incidents and safety scores. This three-level hierarchy (Zone -> StreetSegment -> Incidents/SafetyScores) matches the natural access pattern: when viewing a zone, you typically want to see its streets and their safety data.",
+
+      "example_1": {
+        "_id": "ObjectId('665a1b2c3d4e5f6a7b8c9d10')",
+        "zone_id": 1,
+        "zone_name": "Main Campus",
+        "campus_area": "Central",
+        "street_segments": [
+          {
+            "segment_id": 1,
+            "street_name": "University Ave",
+            "from_node": "Library",
+            "to_node": "Student Center",
+            "incidents": [
+              {
+                "_comment": "Incidents are embedded within the street segment they occurred on. The submitted_by field references a user_id from the Users collection (a manual reference, not a foreign key).",
+                "incident_id": 1,
+                "incident_type": "Theft",
+                "severity": 3,
+                "occurred_at": "2025-03-15T22:30:00Z",
+                "source": "User",
+                "submitted_by_user_id": 1,
+                "status": "Verified"
+              },
+              {
+                "incident_id": 2,
+                "incident_type": "Poor Lighting",
+                "severity": 2,
+                "occurred_at": "2025-03-20T19:00:00Z",
+                "source": "Public",
+                "submitted_by_user_id": null,
+                "status": "Verified"
+              }
+            ],
+            "safety_scores": [
+              {
+                "_comment": "Safety scores are computed daily per segment. score_value ranges from 0 (unsafe) to 100 (very safe).",
+                "score_date": "2025-03-15",
+                "score_value": 72
+              },
+              {
+                "score_date": "2025-03-16",
+                "score_value": 68
+              }
+            ]
+          },
+          {
+            "segment_id": 2,
+            "street_name": "Elm Street",
+            "from_node": "Student Center",
+            "to_node": "Engineering Building",
+            "incidents": [],
+            "safety_scores": [
+              {
+                "score_date": "2025-03-15",
+                "score_value": 91
+              }
+            ]
+          }
+        ]
+      },
+
+      "example_2": {
+        "_id": "ObjectId('665a1b2c3d4e5f6a7b8c9d11')",
+        "zone_id": 2,
+        "zone_name": "North Residential",
+        "campus_area": "North",
+        "street_segments": [
+          {
+            "segment_id": 5,
+            "street_name": "Dorm Road",
+            "from_node": "North Gate",
+            "to_node": "Residence Hall A",
+            "incidents": [
+              {
+                "incident_id": 5,
+                "incident_type": "Suspicious Activity",
+                "severity": 4,
+                "occurred_at": "2025-03-18T01:15:00Z",
+                "source": "User",
+                "submitted_by_user_id": 3,
+                "status": "Unverified"
+              }
+            ],
+            "safety_scores": [
+              {
+                "score_date": "2025-03-18",
+                "score_value": 55
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    "routes": {
+      "_comment": "The Routes collection combines what were previously three separate tables: RouteRequest, GeneratedRoute, and RouteSegment. Each document represents a complete route request and its result. The route_segments array embeds the ordered list of street segments that make up the route, with denormalized street_name for display without requiring a lookup to the Zones collection.",
+
+      "example_1": {
+        "_id": "ObjectId('665a1b2c3d4e5f6a7b8c9d20')",
+        "route_id": 1,
+        "user_id": 1,
+        "requested_at": "2025-03-15T08:00:00Z",
+        "origin_label": "Library",
+        "destination_label": "Engineering Building",
+        "mode": "Safest",
+        "generated_route": {
+          "_comment": "The generated route details are embedded as a sub-document since there is a strict 1:1 relationship with the request.",
+          "generated_at": "2025-03-15T08:00:02Z",
+          "total_distance_meters": 850,
+          "estimated_minutes": 12
+        },
+        "route_segments": [
+          {
+            "sequence_num": 1,
+            "segment_id": 1,
+            "street_name": "University Ave"
+          },
+          {
+            "sequence_num": 2,
+            "segment_id": 2,
+            "street_name": "Elm Street"
+          }
+        ]
+      },
+
+      "example_2": {
+        "_id": "ObjectId('665a1b2c3d4e5f6a7b8c9d21')",
+        "route_id": 2,
+        "user_id": 2,
+        "requested_at": "2025-03-16T14:30:00Z",
+        "origin_label": "Parking Garage",
+        "destination_label": "Science Building",
+        "mode": "Balanced",
+        "generated_route": {
+          "generated_at": "2025-03-16T14:30:01Z",
+          "total_distance_meters": 1200,
+          "estimated_minutes": 18
+        },
+        "route_segments": [
+          {
+            "sequence_num": 1,
+            "segment_id": 4,
+            "street_name": "Oak Boulevard"
+          },
+          {
+            "sequence_num": 2,
+            "segment_id": 3,
+            "street_name": "Science Drive"
+          },
+          {
+            "sequence_num": 3,
+            "segment_id": 6,
+            "street_name": "Campus Loop"
+          }
+        ]
+      }
+    }
+  }
+}

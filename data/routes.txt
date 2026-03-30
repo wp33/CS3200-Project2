@@ -1,0 +1,179 @@
+[
+  {
+    "route_id": 1,
+    "user_id": 1,
+    "requested_at": "2025-03-15T08:00:00Z",
+    "origin_label": "Library",
+    "destination_label": "Engineering Building",
+    "mode": "Safest",
+    "generated_route": {
+      "generated_at": "2025-03-15T08:00:02Z",
+      "total_distance_meters": 850,
+      "estimated_minutes": 12
+    },
+    "route_segments": [
+      { "sequence_num": 1, "segment_id": 1, "street_name": "University Ave" },
+      { "sequence_num": 2, "segment_id": 2, "street_name": "Elm Street" }
+    ]
+  },
+  {
+    "route_id": 2,
+    "user_id": 2,
+    "requested_at": "2025-03-16T14:30:00Z",
+    "origin_label": "Parking Garage",
+    "destination_label": "Science Building",
+    "mode": "Balanced",
+    "generated_route": {
+      "generated_at": "2025-03-16T14:30:01Z",
+      "total_distance_meters": 1200,
+      "estimated_minutes": 18
+    },
+    "route_segments": [
+      { "sequence_num": 1, "segment_id": 4, "street_name": "Oak Boulevard" },
+      { "sequence_num": 2, "segment_id": 3, "street_name": "Science Drive" },
+      { "sequence_num": 3, "segment_id": 6, "street_name": "Campus Loop" }
+    ]
+  },
+  {
+    "route_id": 3,
+    "user_id": 1,
+    "requested_at": "2025-03-17T09:15:00Z",
+    "origin_label": "Library",
+    "destination_label": "Health Center",
+    "mode": "Fastest",
+    "generated_route": {
+      "generated_at": "2025-03-17T09:15:01Z",
+      "total_distance_meters": 1500,
+      "estimated_minutes": 20
+    },
+    "route_segments": [
+      { "sequence_num": 1, "segment_id": 1, "street_name": "University Ave" },
+      { "sequence_num": 2, "segment_id": 6, "street_name": "Campus Loop" },
+      { "sequence_num": 3, "segment_id": 7, "street_name": "Pine Avenue" }
+    ]
+  },
+  {
+    "route_id": 4,
+    "user_id": 3,
+    "requested_at": "2025-03-18T17:45:00Z",
+    "origin_label": "North Gate",
+    "destination_label": "Student Center",
+    "mode": "Safest",
+    "generated_route": {
+      "generated_at": "2025-03-18T17:45:02Z",
+      "total_distance_meters": 950,
+      "estimated_minutes": 14
+    },
+    "route_segments": [
+      { "sequence_num": 1, "segment_id": 5, "street_name": "Dorm Road" },
+      { "sequence_num": 2, "segment_id": 4, "street_name": "Oak Boulevard" },
+      { "sequence_num": 3, "segment_id": 1, "street_name": "University Ave" }
+    ]
+  },
+  {
+    "route_id": 5,
+    "user_id": 5,
+    "requested_at": "2025-03-19T11:00:00Z",
+    "origin_label": "Art Museum",
+    "destination_label": "Stadium",
+    "mode": "Balanced",
+    "generated_route": {
+      "generated_at": "2025-03-19T11:00:03Z",
+      "total_distance_meters": 2100,
+      "estimated_minutes": 28
+    },
+    "route_segments": [
+      { "sequence_num": 1, "segment_id": 10, "street_name": "Gallery Walk" },
+      { "sequence_num": 2, "segment_id": 6, "street_name": "Campus Loop" },
+      { "sequence_num": 3, "segment_id": 8, "street_name": "Stadium Road" }
+    ]
+  },
+  {
+    "route_id": 6,
+    "user_id": 1,
+    "requested_at": "2025-03-20T07:30:00Z",
+    "origin_label": "Residence Hall A",
+    "destination_label": "Library",
+    "mode": "Safest",
+    "generated_route": {
+      "generated_at": "2025-03-20T07:30:01Z",
+      "total_distance_meters": 700,
+      "estimated_minutes": 10
+    },
+    "route_segments": [
+      { "sequence_num": 1, "segment_id": 5, "street_name": "Dorm Road" },
+      { "sequence_num": 2, "segment_id": 1, "street_name": "University Ave" }
+    ]
+  },
+  {
+    "route_id": 7,
+    "user_id": 7,
+    "requested_at": "2025-03-21T13:00:00Z",
+    "origin_label": "Theater",
+    "destination_label": "Recreation Center",
+    "mode": "Fastest",
+    "generated_route": {
+      "generated_at": "2025-03-21T13:00:01Z",
+      "total_distance_meters": 1800,
+      "estimated_minutes": 24
+    },
+    "route_segments": [
+      { "sequence_num": 1, "segment_id": 10, "street_name": "Gallery Walk" },
+      { "sequence_num": 2, "segment_id": 8, "street_name": "Stadium Road" }
+    ]
+  },
+  {
+    "route_id": 8,
+    "user_id": 9,
+    "requested_at": "2025-03-22T16:20:00Z",
+    "origin_label": "Health Center",
+    "destination_label": "Parking Garage",
+    "mode": "Balanced",
+    "generated_route": {
+      "generated_at": "2025-03-22T16:20:02Z",
+      "total_distance_meters": 1100,
+      "estimated_minutes": 15
+    },
+    "route_segments": [
+      { "sequence_num": 1, "segment_id": 7, "street_name": "Pine Avenue" },
+      { "sequence_num": 2, "segment_id": 6, "street_name": "Campus Loop" },
+      { "sequence_num": 3, "segment_id": 4, "street_name": "Oak Boulevard" }
+    ]
+  },
+  {
+    "route_id": 9,
+    "user_id": 5,
+    "requested_at": "2025-03-23T10:00:00Z",
+    "origin_label": "Music Hall",
+    "destination_label": "Student Center",
+    "mode": "Safest",
+    "generated_route": {
+      "generated_at": "2025-03-23T10:00:01Z",
+      "total_distance_meters": 1350,
+      "estimated_minutes": 19
+    },
+    "route_segments": [
+      { "sequence_num": 1, "segment_id": 11, "street_name": "Music Row" },
+      { "sequence_num": 2, "segment_id": 10, "street_name": "Gallery Walk" },
+      { "sequence_num": 3, "segment_id": 2, "street_name": "Elm Street" }
+    ]
+  },
+  {
+    "route_id": 10,
+    "user_id": 6,
+    "requested_at": "2025-03-24T08:45:00Z",
+    "origin_label": "South Gate",
+    "destination_label": "Engineering Building",
+    "mode": "Fastest",
+    "generated_route": {
+      "generated_at": "2025-03-24T08:45:01Z",
+      "total_distance_meters": 1600,
+      "estimated_minutes": 22
+    },
+    "route_segments": [
+      { "sequence_num": 1, "segment_id": 6, "street_name": "Campus Loop" },
+      { "sequence_num": 2, "segment_id": 1, "street_name": "University Ave" },
+      { "sequence_num": 3, "segment_id": 2, "street_name": "Elm Street" }
+    ]
+  }
+]

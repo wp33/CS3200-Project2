@@ -1,0 +1,188 @@
+[
+  {
+    "zone_id": 1,
+    "zone_name": "Main Campus",
+    "campus_area": "Central",
+    "street_segments": [
+      {
+        "segment_id": 1,
+        "street_name": "University Ave",
+        "from_node": "Library",
+        "to_node": "Student Center",
+        "incidents": [
+          { "incident_id": 1, "incident_type": "Theft", "severity": 3, "occurred_at": "2025-03-15T22:30:00Z", "source": "User", "submitted_by_user_id": 1, "status": "Verified" },
+          { "incident_id": 2, "incident_type": "Poor Lighting", "severity": 2, "occurred_at": "2025-03-20T19:00:00Z", "source": "Public", "submitted_by_user_id": null, "status": "Verified" },
+          { "incident_id": 10, "incident_type": "Harassment", "severity": 4, "occurred_at": "2025-04-01T23:45:00Z", "source": "User", "submitted_by_user_id": 5, "status": "Unverified" }
+        ],
+        "safety_scores": [
+          { "score_date": "2025-03-15", "score_value": 72 },
+          { "score_date": "2025-03-16", "score_value": 68 },
+          { "score_date": "2025-03-17", "score_value": 70 }
+        ]
+      },
+      {
+        "segment_id": 2,
+        "street_name": "Elm Street",
+        "from_node": "Student Center",
+        "to_node": "Engineering Building",
+        "incidents": [
+          { "incident_id": 3, "incident_type": "Vandalism", "severity": 2, "occurred_at": "2025-03-18T14:00:00Z", "source": "Public", "submitted_by_user_id": null, "status": "Verified" }
+        ],
+        "safety_scores": [
+          { "score_date": "2025-03-15", "score_value": 91 },
+          { "score_date": "2025-03-16", "score_value": 89 },
+          { "score_date": "2025-03-17", "score_value": 85 }
+        ]
+      },
+      {
+        "segment_id": 3,
+        "street_name": "Science Drive",
+        "from_node": "Engineering Building",
+        "to_node": "Science Building",
+        "incidents": [],
+        "safety_scores": [
+          { "score_date": "2025-03-15", "score_value": 95 },
+          { "score_date": "2025-03-16", "score_value": 94 }
+        ]
+      }
+    ]
+  },
+  {
+    "zone_id": 2,
+    "zone_name": "North Residential",
+    "campus_area": "North",
+    "street_segments": [
+      {
+        "segment_id": 4,
+        "street_name": "Oak Boulevard",
+        "from_node": "Parking Garage",
+        "to_node": "North Gate",
+        "incidents": [
+          { "incident_id": 4, "incident_type": "Assault", "severity": 5, "occurred_at": "2025-03-17T02:00:00Z", "source": "User", "submitted_by_user_id": 3, "status": "Verified" }
+        ],
+        "safety_scores": [
+          { "score_date": "2025-03-17", "score_value": 40 },
+          { "score_date": "2025-03-18", "score_value": 38 }
+        ]
+      },
+      {
+        "segment_id": 5,
+        "street_name": "Dorm Road",
+        "from_node": "North Gate",
+        "to_node": "Residence Hall A",
+        "incidents": [
+          { "incident_id": 5, "incident_type": "Suspicious Activity", "severity": 4, "occurred_at": "2025-03-18T01:15:00Z", "source": "User", "submitted_by_user_id": 3, "status": "Unverified" },
+          { "incident_id": 11, "incident_type": "Poor Lighting", "severity": 2, "occurred_at": "2025-03-22T20:30:00Z", "source": "Public", "submitted_by_user_id": null, "status": "Verified" }
+        ],
+        "safety_scores": [
+          { "score_date": "2025-03-18", "score_value": 55 },
+          { "score_date": "2025-03-19", "score_value": 58 }
+        ]
+      }
+    ]
+  },
+  {
+    "zone_id": 3,
+    "zone_name": "South Campus",
+    "campus_area": "South",
+    "street_segments": [
+      {
+        "segment_id": 6,
+        "street_name": "Campus Loop",
+        "from_node": "South Gate",
+        "to_node": "Athletic Complex",
+        "incidents": [
+          { "incident_id": 6, "incident_type": "Theft", "severity": 3, "occurred_at": "2025-03-19T16:00:00Z", "source": "User", "submitted_by_user_id": 7, "status": "Verified" }
+        ],
+        "safety_scores": [
+          { "score_date": "2025-03-19", "score_value": 65 },
+          { "score_date": "2025-03-20", "score_value": 67 }
+        ]
+      },
+      {
+        "segment_id": 7,
+        "street_name": "Pine Avenue",
+        "from_node": "Athletic Complex",
+        "to_node": "Health Center",
+        "incidents": [],
+        "safety_scores": [
+          { "score_date": "2025-03-19", "score_value": 88 },
+          { "score_date": "2025-03-20", "score_value": 90 }
+        ]
+      }
+    ]
+  },
+  {
+    "zone_id": 4,
+    "zone_name": "Athletic District",
+    "campus_area": "East",
+    "street_segments": [
+      {
+        "segment_id": 8,
+        "street_name": "Stadium Road",
+        "from_node": "Stadium",
+        "to_node": "Recreation Center",
+        "incidents": [
+          { "incident_id": 7, "incident_type": "Vandalism", "severity": 2, "occurred_at": "2025-03-20T11:00:00Z", "source": "Public", "submitted_by_user_id": null, "status": "Verified" },
+          { "incident_id": 8, "incident_type": "Theft", "severity": 3, "occurred_at": "2025-03-21T21:30:00Z", "source": "User", "submitted_by_user_id": 8, "status": "FalseReport" }
+        ],
+        "safety_scores": [
+          { "score_date": "2025-03-20", "score_value": 78 },
+          { "score_date": "2025-03-21", "score_value": 75 }
+        ]
+      },
+      {
+        "segment_id": 9,
+        "street_name": "Field Lane",
+        "from_node": "Recreation Center",
+        "to_node": "Track Field",
+        "incidents": [],
+        "safety_scores": [
+          { "score_date": "2025-03-20", "score_value": 92 }
+        ]
+      }
+    ]
+  },
+  {
+    "zone_id": 5,
+    "zone_name": "West Arts Quarter",
+    "campus_area": "West",
+    "street_segments": [
+      {
+        "segment_id": 10,
+        "street_name": "Gallery Walk",
+        "from_node": "Art Museum",
+        "to_node": "Theater",
+        "incidents": [
+          { "incident_id": 9, "incident_type": "Suspicious Activity", "severity": 3, "occurred_at": "2025-03-22T22:00:00Z", "source": "User", "submitted_by_user_id": 7, "status": "Unverified" }
+        ],
+        "safety_scores": [
+          { "score_date": "2025-03-22", "score_value": 70 },
+          { "score_date": "2025-03-23", "score_value": 73 }
+        ]
+      },
+      {
+        "segment_id": 11,
+        "street_name": "Music Row",
+        "from_node": "Theater",
+        "to_node": "Music Hall",
+        "incidents": [],
+        "safety_scores": [
+          { "score_date": "2025-03-22", "score_value": 85 }
+        ]
+      },
+      {
+        "segment_id": 12,
+        "street_name": "Studio Path",
+        "from_node": "Music Hall",
+        "to_node": "Design Studio",
+        "incidents": [
+          { "incident_id": 12, "incident_type": "Poor Lighting", "severity": 2, "occurred_at": "2025-04-02T18:45:00Z", "source": "Public", "submitted_by_user_id": null, "status": "Unverified" }
+        ],
+        "safety_scores": [
+          { "score_date": "2025-03-22", "score_value": 80 }
+        ]
+      }
+    ]
+  }
+]
